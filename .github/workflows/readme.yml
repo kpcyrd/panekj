@@ -1,0 +1,16 @@
+---
+jobs:
+  readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@v3.10
+        with:
+          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          config_timezone: Europe/Warsaw
+          token: ${{ secrets.PAT }}
+'on':
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: 0 0 */7 * *
